@@ -7,8 +7,8 @@
  */
 int print_integer(int num)
 {
-int chars_print = 0;
-int is_negative = 0;
+	int chars_print = 0;
+	int is_negative = 0;
 
 	if (num < 0)
 	{
@@ -32,5 +32,5 @@ int is_negative = 0;
 		chars_print += write(1, &buffer[i], 1);
 	}
 
-  return (chars_print);
+	return (chars_print);
 }
