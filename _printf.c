@@ -55,13 +55,3 @@ int _printf(const char *format, ...)
 	va_end(list);
 	return (chars_print);
 }
-
-int main()
-{
-	_printf("alyapany\n");
-	_printf("%c\n", 'n');
-	_printf("%s\n", "Hey you");
-	_printf("%%\n");
-
-	return (0);
-}
