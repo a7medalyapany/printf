@@ -1,4 +1,7 @@
 #include "main.h"
+
+void print_buffer(char buffer[], int *buff_ind);
+
 /**
  * _printf - Printf function
  * @format: format.
@@ -14,7 +17,7 @@ int _printf(const char *format, ...)
 
 	va_start(list, format);
 
-	while (*format)
+	while(*format)
 	{
 		if (*format != '%')
 		{
@@ -26,7 +29,7 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '\0')
 				break;
-			if (*format == '%')
+			if (*format == '%")
 			{
 				write(1, format, 1);
 				chars_print++;
@@ -47,43 +50,8 @@ int _printf(const char *format, ...)
 				write(1, str, str_len);
 				chars_print += str_len;
 			}
-			else if (*format == 'd' || *format == 'i')
-			{
-				int num = va_arg(list, int);
-				int num_digits = 0;
-				int num_copy = num;
-				if (num == 0)
-				{
-					write(1, "0", 1);
-					chars_print++;
-				}
-				else if (num < 0)
-				{
-					write(1, "-", 1);
-					chars_print++;
-					num = -num;
-					num_copy = num;
-				}
-				while (num_copy != 0)
-				{
-					num_copy /= 10;
-					num_digits++;
-				}
-				while (num_digits > 0)
-				{
-					int divisor = 1;
-					for (int i = 1; i < num_digits; i++)
-						divisor *= 10;
-					int digit = num / divisor;
-					char digit_char = digit + '0';
-					write(1, &digit_char, 1);
-					chars_print++;
-					num %= divisor;
-					num_digits--;
-				}
-			}
 		}
-		format++;
+		formatt++;
 	}
 
 	va_end(list);
