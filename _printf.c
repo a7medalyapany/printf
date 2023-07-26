@@ -1,7 +1,5 @@
 #include "main.h"
 
-#include "main.h"
-
 /**
  * print_integer - Prints a signed integer
  * @num: The integer to be printed
