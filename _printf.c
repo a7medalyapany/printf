@@ -1,7 +1,5 @@
 #include "main.h"
 
-void print_buffer(char buffer[], int *buff_ind);
-
 /**
  * _printf - Printf function
  * @format: format.
@@ -29,7 +27,7 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '\0')
 				break;
-			if (*format == '%")
+			if (*format == '%')
 			{
 				write(1, format, 1);
 				chars_print++;
@@ -51,7 +49,7 @@ int _printf(const char *format, ...)
 				chars_print += str_len;
 			}
 		}
-		formatt++;
+		format++;
 	}
 
 	va_end(list);
